@@ -26,18 +26,14 @@ class TokenArray {
     }
 
     fun getListDictionaryByYomiTermId(
-        nodeId: Int,
-        rank0ArrayTokenArrayBitvector: IntArray,
-        rank1ArrayTokenArrayBitvector: IntArray
+        nodeId: Int, rank0ArrayTokenArrayBitvector: IntArray, rank1ArrayTokenArrayBitvector: IntArray
     ): List<TokenEntry> {
         val startRank = bitvector.rank1Common(
-            bitvector.select0Common(nodeId, rank0ArrayTokenArrayBitvector),
-            rank1ArrayTokenArrayBitvector
+            bitvector.select0Common(nodeId, rank0ArrayTokenArrayBitvector), rank1ArrayTokenArrayBitvector
         )
         val endRank = bitvector.rank1Common(
             bitvector.select0Common(
-                nodeId + 1,
-                rank0ArrayTokenArrayBitvector
+                nodeId + 1, rank0ArrayTokenArrayBitvector
             ), rank1ArrayTokenArrayBitvector
         )
 
@@ -45,8 +41,7 @@ class TokenArray {
             for (i in startRank until endRank) {
                 add(
                     TokenEntry(
-                        wordCost = wordCostList[i],
-                        nodeId = nodeIdList[i]
+                        wordCost = wordCostList[i], nodeId = nodeIdList[i]
                     )
                 )
             }
@@ -66,8 +61,6 @@ class TokenArray {
             val nodeId = if (dictionary.withUpperCase) wordTrie.getNodeIndex(dictionary.word) else -1
             if (index % 5000 == 0) {
                 println("build token array: $index  ${dictionary.word} $nodeId")
-            } else if (dictionary.word == "GitHub") {
-                println("$dictionary")
             }
             nodeIdListTemp.add(nodeId)
         }
@@ -75,21 +68,17 @@ class TokenArray {
     }
 
     fun getListDictionaryByYomiTermId(
-        nodeId: Int,
-        succinctBitVector: SuccinctBitVector
+        nodeId: Int, succinctBitVector: SuccinctBitVector
     ): List<TokenEntry> {
         val startSelect0 = succinctBitVector.select0(nodeId)
         val endSelect0 = succinctBitVector.select0(nodeId + 1)
         val startRank1 = succinctBitVector.rank1(startSelect0)
         val endRank1 = succinctBitVector.rank1(endSelect0)
-
-        println("getListDictionaryByYomiTermId: $startRank1 $endRank1")
         val tempList2 = mutableListOf<TokenEntry>().apply {
             for (i in startRank1 until endRank1) {
                 add(
                     TokenEntry(
-                        wordCost = wordCostList[i],
-                        nodeId = nodeIdList[i]
+                        wordCost = wordCostList[i], nodeId = nodeIdList[i]
                     )
                 )
             }
@@ -104,14 +93,12 @@ class TokenArray {
     ): List<TokenEntry> {
         val b = bitvector.rank1CommonShort(
             bitvector.select0CommonShort(
-                nodeId,
-                rank0ArrayTokenArrayBitvector
+                nodeId, rank0ArrayTokenArrayBitvector
             ).toInt(), rank1ArrayTokenArrayBitvector
         )
         val c = bitvector.rank1CommonShort(
             bitvector.select0CommonShort(
-                (nodeId + 1).toShort(),
-                rank0ArrayTokenArrayBitvector
+                (nodeId + 1).toShort(), rank0ArrayTokenArrayBitvector
             ).toInt(), rank1ArrayTokenArrayBitvector
         )
         val tempList2 = mutableListOf<TokenEntry>()
@@ -127,8 +114,7 @@ class TokenArray {
     }
 
     fun getListDictionaryByYomiTermIdShortArray(
-        nodeId: Short,
-        succinctBitVector: SuccinctBitVector
+        nodeId: Short, succinctBitVector: SuccinctBitVector
     ): List<TokenEntry> {
         val startSelect0 = succinctBitVector.select0(nodeId.toInt())
         val startRank1 = succinctBitVector.rank1(startSelect0)

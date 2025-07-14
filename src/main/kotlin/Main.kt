@@ -24,19 +24,7 @@ fun main() {
         .distinctBy { it.reading }
         .sortedBy { it.reading.length }
     println("読み込んだエントリ数: ${dictList.size}")
-    println(dictList.take(10).joinToString("\n") { "${it.reading}\t${it.word}\t${it.cost}" })
     buildDictionaries(dictList)
-    println(tokenArray.wordCostList.take(100).joinToString())
-    println("node id: ${tokenArray.nodeIdList.size} ${tokenArray.wordCostList.size}")
-    println("${tokenArray.wordCostList[75331]} ${tokenArray.wordCostList[75332]}")
-    val test1 = getPrediction("git")
-    val test2 = getPrediction("githu")
-    val test3 = getPrediction("hon")
-    val test4 = getPrediction("hone")
-    println("$test1")
-    println("$test2")
-    println("$test3")
-    println("$test4")
 }
 
 private fun buildDictionaries(dictList: List<Dictionary>) {
