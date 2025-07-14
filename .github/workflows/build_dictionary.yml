@@ -4,7 +4,7 @@ on:
   push:
     branches:
       - main
-  workflow_dispatch: { }
+  workflow_dispatch: {}
 
 jobs:
   build-and-release:
@@ -35,10 +35,8 @@ jobs:
 
       - name: Generate .dat artifacts
         run: |
-          # Run the main class to produce reading.dat, token.dat, word.dat
-          ./gradlew run --args=''
-          # Or, if you apply the Application plugin:
-          # java -jar build/libs/your-app.jar
+          # Run the MainKt class to produce reading.dat, token.dat, word.dat
+          java -cp build/libs/*.jar MainKt
 
       - name: Upload artifacts
         uses: actions/upload-artifact@v4
