@@ -6,13 +6,17 @@ on:
       - main
   workflow_dispatch: {}
 
-# Grant write permissions for contents to allow release creation
+# Grant write permissions for contents to allow release creation and asset uploads
+dependent: false
 permissions:
   contents: write
 
 jobs:
   build-and-release:
     runs-on: ubuntu-latest
+    # Provide the GitHub token for all steps
+    env:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
     steps:
       - name: Checkout repository
@@ -57,8 +61,6 @@ jobs:
           release_name: Data Artifacts v${{ github.run_number }}
           draft: false
           prerelease: false
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Upload reading.dat to release
         uses: actions/upload-release-asset@v1
