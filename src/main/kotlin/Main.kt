@@ -1,6 +1,6 @@
 import converters.Converter
 import converters.ConverterWithTermId
-import dictionary.BuildDictionary.loadDictionaryFromZip
+import dictionary.BuildDictionary
 import dictionary.Dictionary
 import louds.LOUDS
 import louds.louds_with_term_id.LOUDSWithTermId
@@ -20,7 +20,7 @@ private lateinit var succinctBitVectorTokenArray: SuccinctBitVector
 private lateinit var succinctBitVectorLBSWord: SuccinctBitVector
 
 fun main() {
-    val dictList = loadDictionaryFromZip()
+    val dictList = BuildDictionary.loadDictionaryFromZip()
         .distinctBy { it.reading }
         .sortedBy { it.reading.length }
     println("読み込んだエントリ数: ${dictList.size}")
