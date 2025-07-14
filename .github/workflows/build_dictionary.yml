@@ -6,17 +6,12 @@ on:
       - main
   workflow_dispatch: {}
 
-# Grant write permissions for contents to allow release creation and asset uploads
-dependent: false
 permissions:
   contents: write
 
 jobs:
   build-and-release:
     runs-on: ubuntu-latest
-    # Provide the GitHub token for all steps
-    env:
-      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
     steps:
       - name: Checkout repository
@@ -29,7 +24,7 @@ jobs:
           java-version: '17'
 
       - name: Cache Gradle packages
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         with:
           path: |
             ~/.gradle/caches
@@ -57,6 +52,7 @@ jobs:
         id: create_release
         uses: actions/create-release@v1
         with:
+          token: ${{ secrets.GITHUB_TOKEN }}
           tag_name: v${{ github.run_number }}
           release_name: Data Artifacts v${{ github.run_number }}
           draft: false
@@ -65,6 +61,7 @@ jobs:
       - name: Upload reading.dat to release
         uses: actions/upload-release-asset@v1
         with:
+          token: ${{ secrets.GITHUB_TOKEN }}
           upload_url: ${{ steps.create_release.outputs.upload_url }}
           asset_path: src/main/resources/reading.dat
           asset_name: reading.dat
@@ -73,6 +70,7 @@ jobs:
       - name: Upload token.dat to release
         uses: actions/upload-release-asset@v1
         with:
+          token: ${{ secrets.GITHUB_TOKEN }}
           upload_url: ${{ steps.create_release.outputs.upload_url }}
           asset_path: src/main/resources/token.dat
           asset_name: token.dat
@@ -81,6 +79,7 @@ jobs:
       - name: Upload word.dat to release
         uses: actions/upload-release-asset@v1
         with:
+          token: ${{ secrets.GITHUB_TOKEN }}
           upload_url: ${{ steps.create_release.outputs.upload_url }}
           asset_path: src/main/resources/word.dat
           asset_name: word.dat
