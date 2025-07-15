@@ -25,6 +25,9 @@ fun main() {
         .sortedBy { it.reading.length }
     println("読み込んだエントリ数: ${dictList.size}")
     buildDictionaries(dictList)
+    println("result: ${getPrediction("git")}")
+    println("result: ${getPrediction("github")}")
+
 }
 
 private fun buildDictionaries(dictList: List<Dictionary>) {
@@ -110,5 +113,5 @@ private fun getPrediction(input: String): List<Result> {
             predictions.addAll(tangoList)
         }
     }
-    return predictions
+    return predictions.sortedBy { it.score }
 }
