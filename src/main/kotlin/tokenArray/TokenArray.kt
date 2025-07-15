@@ -61,6 +61,8 @@ class TokenArray {
             val nodeId = if (dictionary.withUpperCase) wordTrie.getNodeIndex(dictionary.word) else -1
             if (index % 5000 == 0) {
                 println("build token array: $index  ${dictionary.word} $nodeId")
+            }else if (dictionary.reading == "im"){
+                println("build token array: im ${dictionary.word} ${dictionary.cost} ${dictionary.withUpperCase} $nodeId")
             }
             nodeIdListTemp.add(nodeId)
         }

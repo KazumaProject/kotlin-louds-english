@@ -21,9 +21,11 @@ private lateinit var succinctBitVectorTokenArray: SuccinctBitVector
 private lateinit var succinctBitVectorLBSWord: SuccinctBitVector
 
 fun main() {
-    val dictList = BuildDictionary.loadDictionaryFromZip()
-        .distinctBy { it.reading }
-        .sortedBy { it.reading.length }
+    val dictList: List<Dictionary> = (BuildDictionary.loadDictionaryFromZip() + MANUAL_WORD)
+        .sortedWith(
+            compareBy<Dictionary> { it.reading.length }
+                .thenBy { it.cost }
+        )
     println("読み込んだエントリ数: ${dictList.size}")
     buildDictionaries(dictList)
     val englishEngine = EnglishEngine(
@@ -36,8 +38,8 @@ fun main() {
         succinctBitVectorTokenArray = succinctBitVectorTokenArray
     )
     println("result: ${englishEngine.getPrediction("the")}")
-    println("result: ${englishEngine.getPrediction("github")}")
-
+    println("result: ${englishEngine.getPrediction("im")}")
+    println("result: ${englishEngine.getPrediction("ios")}")
 }
 
 private fun buildDictionaries(dictList: List<Dictionary>) {
@@ -46,7 +48,10 @@ private fun buildDictionaries(dictList: List<Dictionary>) {
 
     for (entry in dictList) {
         readingTree.insert(entry.reading)
-        if (entry.word.hasInternalUpperCase()) {
+        if (entry.withUpperCase) {
+            if (entry.reading == "im") {
+                println("im: ${entry.word}")
+            }
             wordTree.insert(entry.word)
         }
     }
@@ -73,7 +78,7 @@ private fun buildDictionaries(dictList: List<Dictionary>) {
     val objectInput = ObjectInputStream(FileInputStream("./src/main/resources/token.dat"))
     tokenArray = TokenArray()
     tokenArray.readExternal(objectInput)
-
+    println("size ${tokenArray.bitvector.size()}")
     succinctBitVectorLBSReading = SuccinctBitVector(readingLOUDS.LBS)
     succinctBitVectorReadingIsLeaf = SuccinctBitVector(readingLOUDS.isLeaf)
     succinctBitVectorLBSWord = SuccinctBitVector(wordLOUDS.LBS)
