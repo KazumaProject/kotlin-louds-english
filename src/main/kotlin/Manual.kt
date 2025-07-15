@@ -297,6 +297,8 @@ val MANUAL_WORD = listOf(
     Dictionary(reading = "aint", cost = 20001.toShort(), word = "Ain't", withUpperCase = true),
     Dictionary(reading = "hes", cost = 20001.toShort(), word = "he's", withUpperCase = true),
     Dictionary(reading = "shes", cost = 20001.toShort(), word = "she's", withUpperCase = true),
+    Dictionary(reading = "hasnt", cost = 20001.toShort(), word = "hasn't", withUpperCase = true),
     Dictionary(reading = "maam", cost = 20001.toShort(), word = "ma'am", withUpperCase = true),
     Dictionary(reading = "another", cost = 20000.toShort(), word = "another", withUpperCase = false),
+    Dictionary(reading = "youre", cost = 10000.toShort(), word = "you're", withUpperCase = true),
 )
