@@ -2,7 +2,7 @@ import dictionary.Dictionary
 
 val MANUAL_WORD = listOf(
     Dictionary(
-        reading = "eta", cost = (20000).toShort(), word = "eTA", withUpperCase = true
+        reading = "eta", cost = (8000).toShort(), word = "eTA", withUpperCase = true
     ),
     Dictionary(
         reading = "gitlab", cost = (20000).toShort(), word = "GitLab", withUpperCase = true
@@ -11,10 +11,22 @@ val MANUAL_WORD = listOf(
         reading = "dropbox", cost = (20000).toShort(), word = "DropBox", withUpperCase = true
     ),
     Dictionary(
-        reading = "ios", cost = (10000).toShort(), word = "iOS", withUpperCase = true
+        reading = "ios", cost = (7000).toShort(), word = "iOS", withUpperCase = true
+    ),
+    Dictionary(
+        reading = "ipad", cost = (7000).toShort(), word = "iPad", withUpperCase = true
+    ),
+    Dictionary(
+        reading = "ipod", cost = (7000).toShort(), word = "iPod", withUpperCase = true
+    ),
+    Dictionary(
+        reading = "imac", cost = (7000).toShort(), word = "iMac", withUpperCase = true
     ),
     Dictionary(
         reading = "macos", cost = (10000).toShort(), word = "macOS", withUpperCase = true
+    ),
+    Dictionary(
+        reading = "macbook", cost = (7000).toShort(), word = "MacBook", withUpperCase = true
     ),
     Dictionary(
         reading = "airpods", cost = (20000).toShort(), word = "AirPods", withUpperCase = true
@@ -237,68 +249,44 @@ val MANUAL_WORD = listOf(
     Dictionary(reading = "wasnt", cost = (20001).toShort(), word = "Wasn't", withUpperCase = true),
     Dictionary(reading = "werent", cost = (10000).toShort(), word = "weren't", withUpperCase = true),
     Dictionary(reading = "werent", cost = (20001).toShort(), word = "Weren't", withUpperCase = true),
-    Dictionary(reading = "ive", cost = 10000.toShort(), word = "I've", withUpperCase = true),
+    Dictionary(reading = "ive", cost = 8000.toShort(), word = "I've", withUpperCase = true),
     Dictionary(reading = "youve", cost = 10000.toShort(), word = "you've", withUpperCase = true),
-    Dictionary(reading = "weve", cost = 10000.toShort(), word = "we've", withUpperCase = true),
+    Dictionary(reading = "weve", cost = 8000.toShort(), word = "we've", withUpperCase = true),
     Dictionary(reading = "theyve", cost = 10000.toShort(), word = "they've", withUpperCase = true),
-    Dictionary(reading = "youve", cost = 20001.toShort(), word = "You've", withUpperCase = true),
-    Dictionary(reading = "weve", cost = 20001.toShort(), word = "We've", withUpperCase = true),
-    Dictionary(reading = "theyve", cost = 20001.toShort(), word = "They've", withUpperCase = true),
-    Dictionary(reading = "ill", cost = 10000.toShort(), word = "I'll", withUpperCase = true),
+    Dictionary(reading = "ill", cost = 8000.toShort(), word = "I'll", withUpperCase = true),
     Dictionary(reading = "youll", cost = 10000.toShort(), word = "you'll", withUpperCase = true),
     Dictionary(reading = "hell", cost = 10000.toShort(), word = "he'll", withUpperCase = true),
     Dictionary(reading = "shell", cost = 10000.toShort(), word = "she'll", withUpperCase = true),
-    Dictionary(reading = "itll", cost = 10000.toShort(), word = "it'll", withUpperCase = true),
+    Dictionary(reading = "itll", cost = 8000.toShort(), word = "it'll", withUpperCase = true),
     Dictionary(reading = "theyll", cost = 10000.toShort(), word = "they'll", withUpperCase = true),
-    Dictionary(reading = "well", cost = 10000.toShort(), word = "we'll", withUpperCase = true),
+    Dictionary(reading = "well", cost = 8000.toShort(), word = "we'll", withUpperCase = true),
     Dictionary(reading = "youll", cost = 20001.toShort(), word = "You'll", withUpperCase = true),
-    Dictionary(reading = "hell", cost = 20001.toShort(), word = "He'll", withUpperCase = true),
-    Dictionary(reading = "shell", cost = 20001.toShort(), word = "She'll", withUpperCase = true),
-    Dictionary(reading = "itll", cost = 20001.toShort(), word = "It'll", withUpperCase = true),
-    Dictionary(reading = "theyll", cost = 20001.toShort(), word = "They'll", withUpperCase = true),
-    Dictionary(reading = "well", cost = 20001.toShort(), word = "We'll", withUpperCase = true),
-    Dictionary(reading = "id", cost = 10000.toShort(), word = "I'd", withUpperCase = true),
+    Dictionary(reading = "id", cost = 6000.toShort(), word = "I'd", withUpperCase = true),
     Dictionary(reading = "youd", cost = 10000.toShort(), word = "you'd", withUpperCase = true),
-    Dictionary(reading = "hed", cost = 10000.toShort(), word = "he'd", withUpperCase = true),
-    Dictionary(reading = "shed", cost = 10000.toShort(), word = "she'd", withUpperCase = true),
-    Dictionary(reading = "itd", cost = 10000.toShort(), word = "it'd", withUpperCase = true),
-    Dictionary(reading = "wed", cost = 10000.toShort(), word = "we'd", withUpperCase = true),
-    Dictionary(reading = "theyd", cost = 10000.toShort(), word = "they'd", withUpperCase = true),
-    Dictionary(reading = "youd", cost = 10000.toShort(), word = "You'd", withUpperCase = true),
-    Dictionary(reading = "hed", cost = 10000.toShort(), word = "He'd", withUpperCase = true),
-    Dictionary(reading = "shed", cost = 10000.toShort(), word = "She'd", withUpperCase = true),
-    Dictionary(reading = "itd", cost = 10000.toShort(), word = "It'd", withUpperCase = true),
-    Dictionary(reading = "wed", cost = 10000.toShort(), word = "We'd", withUpperCase = true),
-    Dictionary(reading = "theyd", cost = 10000.toShort(), word = "They'd", withUpperCase = true),
+    Dictionary(reading = "hed", cost = 6000.toShort(), word = "he'd", withUpperCase = true),
+    Dictionary(reading = "shed", cost = 6000.toShort(), word = "she'd", withUpperCase = true),
+    Dictionary(reading = "itd", cost = 6000.toShort(), word = "it'd", withUpperCase = true),
+    Dictionary(reading = "wed", cost = 6000.toShort(), word = "we'd", withUpperCase = true),
 
-    Dictionary(reading = "cant", cost = 10000.toShort(), word = "can't", withUpperCase = true),
-    Dictionary(reading = "cant", cost = 20001.toShort(), word = "Can't", withUpperCase = true),
-
+    Dictionary(reading = "cant", cost = 6000.toShort(), word = "can't", withUpperCase = true),
     Dictionary(reading = "couldnt", cost = 10000.toShort(), word = "couldn't", withUpperCase = true),
-    Dictionary(reading = "couldnt", cost = 20001.toShort(), word = "Couldn't", withUpperCase = true),
-
     Dictionary(reading = "shouldnt", cost = 10000.toShort(), word = "shouldn't", withUpperCase = true),
-    Dictionary(reading = "shouldnt", cost = 20001.toShort(), word = "Shouldn't", withUpperCase = true),
-
     Dictionary(reading = "wouldnt", cost = 10000.toShort(), word = "wouldn't", withUpperCase = true),
-    Dictionary(reading = "wouldnt", cost = 20001.toShort(), word = "Wouldn't", withUpperCase = true),
-
     Dictionary(reading = "mustnt", cost = 10000.toShort(), word = "mustn't", withUpperCase = true),
-    Dictionary(reading = "mustnt", cost = 20001.toShort(), word = "Mustn't", withUpperCase = true),
-
     Dictionary(reading = "mightnt", cost = 10000.toShort(), word = "mightn't", withUpperCase = true),
     Dictionary(reading = "neednt", cost = 10000.toShort(), word = "needn't", withUpperCase = true),
     Dictionary(reading = "shant", cost = 10000.toShort(), word = "shan't", withUpperCase = true),
-    Dictionary(reading = "aint", cost = 10000.toShort(), word = "ain't", withUpperCase = true),
+    Dictionary(reading = "aint", cost = 6000.toShort(), word = "ain't", withUpperCase = true),
 
     Dictionary(reading = "mightnt", cost = 20001.toShort(), word = "Mightn't", withUpperCase = true),
     Dictionary(reading = "neednt", cost = 20001.toShort(), word = "Needn't", withUpperCase = true),
     Dictionary(reading = "shant", cost = 20001.toShort(), word = "Shan't", withUpperCase = true),
-    Dictionary(reading = "aint", cost = 20001.toShort(), word = "Ain't", withUpperCase = true),
-    Dictionary(reading = "hes", cost = 20001.toShort(), word = "he's", withUpperCase = true),
-    Dictionary(reading = "shes", cost = 20001.toShort(), word = "she's", withUpperCase = true),
+    Dictionary(reading = "hes", cost = 6000.toShort(), word = "he's", withUpperCase = true),
+    Dictionary(reading = "shes", cost = 6000.toShort(), word = "she's", withUpperCase = true),
     Dictionary(reading = "hasnt", cost = 20001.toShort(), word = "hasn't", withUpperCase = true),
-    Dictionary(reading = "maam", cost = 20001.toShort(), word = "ma'am", withUpperCase = true),
+    Dictionary(reading = "maam", cost = 6000.toShort(), word = "ma'am", withUpperCase = true),
     Dictionary(reading = "another", cost = 20000.toShort(), word = "another", withUpperCase = false),
     Dictionary(reading = "youre", cost = 10000.toShort(), word = "you're", withUpperCase = true),
+    Dictionary(reading = "havent", cost = 10000.toShort(), word = "haven't", withUpperCase = true),
+    Dictionary(reading = "atcoder", cost = 10000.toShort(), word = "AtCoder", withUpperCase = true),
 )
