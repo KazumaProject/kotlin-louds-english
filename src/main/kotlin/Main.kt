@@ -21,7 +21,7 @@ private lateinit var succinctBitVectorTokenArray: SuccinctBitVector
 private lateinit var succinctBitVectorLBSWord: SuccinctBitVector
 
 fun main() {
-    val dictList: List<Dictionary> = (BuildDictionary.loadDictionaryFromZip() + MANUAL_WORD)
+    val dictList: List<Dictionary> = (BuildDictionary.loadDictionaryFromZip() + MANUAL_WORD + TERMINAL_COMMAND)
         .sortedWith(
             compareBy<Dictionary> { it.reading.length }
                 .thenBy { it.cost }
