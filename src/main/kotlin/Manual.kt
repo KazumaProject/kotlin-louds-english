@@ -417,7 +417,6 @@ val TERMINAL_COMMAND = listOf(
     Dictionary(reading = "perl", cost = (8000).toShort(), word = "perl", withUpperCase = false),
     Dictionary(reading = "ruby", cost = (8000).toShort(), word = "ruby", withUpperCase = false),
     Dictionary(reading = "node", cost = (8000).toShort(), word = "node", withUpperCase = false),
-    Dictionary(reading = "npm", cost = (8000).toShort(), word = "npm", withUpperCase = false),
     Dictionary(reading = "yarn", cost = (8000).toShort(), word = "yarn", withUpperCase = false),
     Dictionary(reading = "go", cost = (8000).toShort(), word = "go", withUpperCase = false),
     Dictionary(reading = "rustc", cost = (8000).toShort(), word = "rustc", withUpperCase = false),
@@ -445,4 +444,116 @@ val TERMINAL_COMMAND = listOf(
     Dictionary(reading = "su", cost = (8000).toShort(), word = "su", withUpperCase = false),
     Dictionary(reading = "login", cost = (8000).toShort(), word = "login", withUpperCase = false),
     Dictionary(reading = "logout", cost = (8000).toShort(), word = "logout", withUpperCase = false)
+)
+
+/**
+ * 一般的な Web／JavaScript 系コマンド
+ */
+val WEB_COMMAND = listOf(
+    Dictionary(reading = "npx", cost = (8000).toShort(), word = "npx", withUpperCase = false),
+    Dictionary(reading = "npm", cost = (8000).toShort(), word = "npm", withUpperCase = false),
+    Dictionary(reading = "yarn", cost = (8000).toShort(), word = "yarn", withUpperCase = false),
+    Dictionary(reading = "pnpm", cost = (8000).toShort(), word = "pnpm", withUpperCase = false),
+    Dictionary(reading = "bun", cost = (8000).toShort(), word = "bun", withUpperCase = false),
+    Dictionary(reading = "node", cost = (8000).toShort(), word = "node", withUpperCase = false),
+    Dictionary(reading = "deno", cost = (8000).toShort(), word = "deno", withUpperCase = false),
+    Dictionary(reading = "vite", cost = (8000).toShort(), word = "vite", withUpperCase = false),
+    Dictionary(reading = "next", cost = (8000).toShort(), word = "next", withUpperCase = false),
+    Dictionary(reading = "nuxt", cost = (8000).toShort(), word = "nuxt", withUpperCase = false),
+    Dictionary(reading = "astro", cost = (8000).toShort(), word = "astro", withUpperCase = false),
+    Dictionary(reading = "gatsby", cost = (8000).toShort(), word = "gatsby", withUpperCase = false),
+    Dictionary(reading = "webpack", cost = (8000).toShort(), word = "webpack", withUpperCase = false),
+    Dictionary(reading = "rollup", cost = (8000).toShort(), word = "rollup", withUpperCase = false),
+    Dictionary(reading = "parcel", cost = (8000).toShort(), word = "parcel", withUpperCase = false),
+    Dictionary(reading = "esbuild", cost = (8000).toShort(), word = "esbuild", withUpperCase = false),
+    Dictionary(reading = "tsc", cost = (8000).toShort(), word = "tsc", withUpperCase = false),
+    Dictionary(reading = "ts-node", cost = (8000).toShort(), word = "ts-node", withUpperCase = false),
+    Dictionary(reading = "jest", cost = (8000).toShort(), word = "jest", withUpperCase = false),
+    Dictionary(reading = "vitest", cost = (8000).toShort(), word = "vitest", withUpperCase = false),
+    Dictionary(reading = "playwright", cost = (8000).toShort(), word = "playwright", withUpperCase = false),
+    Dictionary(reading = "cypress", cost = (8000).toShort(), word = "cypress", withUpperCase = false),
+    Dictionary(reading = "nodemon", cost = (8000).toShort(), word = "nodemon", withUpperCase = false),
+    Dictionary(reading = "pm2", cost = (8000).toShort(), word = "pm2", withUpperCase = false)
+)
+
+/**
+ * Python 系コマンド
+ */
+val PYTHON_COMMAND = listOf(
+    Dictionary(reading = "python", cost = (8000).toShort(), word = "python", withUpperCase = false),
+    Dictionary(reading = "python3", cost = (8000).toShort(), word = "python3", withUpperCase = false),
+    Dictionary(reading = "pip", cost = (8000).toShort(), word = "pip", withUpperCase = false),
+    Dictionary(reading = "pip3", cost = (8000).toShort(), word = "pip3", withUpperCase = false),
+    Dictionary(reading = "pipx", cost = (8000).toShort(), word = "pipx", withUpperCase = false),
+    Dictionary(reading = "poetry", cost = (8000).toShort(), word = "poetry", withUpperCase = false),
+    Dictionary(reading = "pipenv", cost = (8000).toShort(), word = "pipenv", withUpperCase = false),
+    Dictionary(reading = "conda", cost = (8000).toShort(), word = "conda", withUpperCase = false),
+    Dictionary(reading = "mamba", cost = (8000).toShort(), word = "mamba", withUpperCase = false),
+    Dictionary(reading = "pyenv", cost = (8000).toShort(), word = "pyenv", withUpperCase = false),
+    Dictionary(reading = "virtualenv", cost = (8000).toShort(), word = "virtualenv", withUpperCase = false),
+    Dictionary(reading = "ruff", cost = (8000).toShort(), word = "ruff", withUpperCase = false),
+    Dictionary(reading = "black", cost = (8000).toShort(), word = "black", withUpperCase = false),
+    Dictionary(reading = "isort", cost = (8000).toShort(), word = "isort", withUpperCase = false),
+    Dictionary(reading = "flake8", cost = (8000).toShort(), word = "flake8", withUpperCase = false),
+    Dictionary(reading = "pylint", cost = (8000).toShort(), word = "pylint", withUpperCase = false),
+    Dictionary(reading = "mypy", cost = (8000).toShort(), word = "mypy", withUpperCase = false),
+    Dictionary(reading = "pytest", cost = (8000).toShort(), word = "pytest", withUpperCase = false),
+    Dictionary(reading = "tox", cost = (8000).toShort(), word = "tox", withUpperCase = false),
+    Dictionary(reading = "coverage", cost = (8000).toShort(), word = "coverage", withUpperCase = false),
+    Dictionary(reading = "uvicorn", cost = (8000).toShort(), word = "uvicorn", withUpperCase = false),
+    Dictionary(reading = "gunicorn", cost = (8000).toShort(), word = "gunicorn", withUpperCase = false),
+    Dictionary(reading = "django-admin", cost = (8000).toShort(), word = "django-admin", withUpperCase = false),
+    Dictionary(reading = "flask", cost = (8000).toShort(), word = "flask", withUpperCase = false)
+)
+
+val WEB_COMMAND_EXTRA = listOf(
+    Dictionary(reading = "eslint", cost = 8000.toShort(), word = "eslint", withUpperCase = false),
+    Dictionary(reading = "prettier", cost = 8000.toShort(), word = "prettier", withUpperCase = false),
+    Dictionary(reading = "husky", cost = 8000.toShort(), word = "husky", withUpperCase = false),
+    Dictionary(reading = "commitlint", cost = 8000.toShort(), word = "commitlint", withUpperCase = false),
+    Dictionary(reading = "ncu", cost = 8000.toShort(), word = "ncu", withUpperCase = false),
+    Dictionary(reading = "vercel", cost = 8000.toShort(), word = "vercel", withUpperCase = false),
+    Dictionary(reading = "firebase", cost = 8000.toShort(), word = "firebase", withUpperCase = false),
+    Dictionary(reading = "supabase", cost = 8000.toShort(), word = "supabase", withUpperCase = false),
+    Dictionary(reading = "prisma", cost = 8000.toShort(), word = "prisma", withUpperCase = false),
+    Dictionary(reading = "nx", cost = 8000.toShort(), word = "nx", withUpperCase = false),
+    Dictionary(reading = "turbo", cost = 8000.toShort(), word = "turbo", withUpperCase = false),
+    Dictionary(reading = "lerna", cost = 8000.toShort(), word = "lerna", withUpperCase = false)
+)
+
+val PYTHON_COMMAND_EXTRA = listOf(
+    Dictionary(reading = "ipython", cost = 8000.toShort(), word = "ipython", withUpperCase = false),
+    Dictionary(reading = "jupyter", cost = 8000.toShort(), word = "jupyter", withUpperCase = false),
+    Dictionary(reading = "jupyter-lab", cost = 8000.toShort(), word = "jupyter-lab", withUpperCase = false),
+    Dictionary(reading = "streamlit", cost = 8000.toShort(), word = "streamlit", withUpperCase = false),
+    Dictionary(reading = "pdm", cost = 8000.toShort(), word = "pdm", withUpperCase = false),
+    Dictionary(reading = "hatch", cost = 8000.toShort(), word = "hatch", withUpperCase = false),
+    Dictionary(reading = "pip-compile", cost = 8000.toShort(), word = "pip-compile", withUpperCase = false),
+    Dictionary(reading = "pip-sync", cost = 8000.toShort(), word = "pip-sync", withUpperCase = false),
+    Dictionary(reading = "py-spy", cost = 8000.toShort(), word = "py-spy", withUpperCase = false),
+    Dictionary(reading = "pipdeptree", cost = 8000.toShort(), word = "pipdeptree", withUpperCase = false)
+)
+
+val DEVOPS_COMMAND = listOf(
+    Dictionary(reading = "aws", cost = 8000.toShort(), word = "aws", withUpperCase = false),
+    Dictionary(reading = "az", cost = 8000.toShort(), word = "az", withUpperCase = false),
+    Dictionary(reading = "gcloud", cost = 8000.toShort(), word = "gcloud", withUpperCase = false),
+    Dictionary(reading = "kubectx", cost = 8000.toShort(), word = "kubectx", withUpperCase = false),
+    Dictionary(reading = "kubens", cost = 8000.toShort(), word = "kubens", withUpperCase = false),
+    Dictionary(reading = "helm", cost = 8000.toShort(), word = "helm", withUpperCase = false),
+    Dictionary(reading = "k9s", cost = 8000.toShort(), word = "k9s", withUpperCase = false),
+    Dictionary(reading = "terraform", cost = 8000.toShort(), word = "terraform", withUpperCase = false),
+    Dictionary(reading = "tflint", cost = 8000.toShort(), word = "tflint", withUpperCase = false),
+    Dictionary(reading = "pulumi", cost = 8000.toShort(), word = "pulumi", withUpperCase = false)
+)
+
+val UTIL_COMMAND = listOf(
+    Dictionary(reading = "exa",     cost = 8000.toShort(), word = "exa",     withUpperCase = false),
+    Dictionary(reading = "bat",     cost = 8000.toShort(), word = "bat",     withUpperCase = false),
+    Dictionary(reading = "ripgrep", cost = 8000.toShort(), word = "ripgrep", withUpperCase = false),
+    Dictionary(reading = "fd",      cost = 8000.toShort(), word = "fd",      withUpperCase = false),
+    Dictionary(reading = "fzf",     cost = 8000.toShort(), word = "fzf",     withUpperCase = false),
+    Dictionary(reading = "jq",      cost = 8000.toShort(), word = "jq",      withUpperCase = false),
+    Dictionary(reading = "htop",    cost = 8000.toShort(), word = "htop",    withUpperCase = false),
+    Dictionary(reading = "docker-compose", cost = 8000.toShort(), word = "docker-compose", withUpperCase = false),
 )
