@@ -200,10 +200,43 @@ val MANUAL_WORD = listOf(
         reading = "codesandbox", cost = (20000).toShort(), word = "CodeSandbox", withUpperCase = true
     ),
     Dictionary(
-        reading = "linkedin", cost = (20000).toShort(), word = "LinkedIn", withUpperCase = true
+        reading = "linkedin", cost = (10000).toShort(), word = "LinkedIn", withUpperCase = true
     ),
     Dictionary(
-        reading = "github", cost = (20000).toShort(), word = "GitHub", withUpperCase = true
+        reading = "github", cost = (10000).toShort(), word = "GitHub", withUpperCase = true
+    ),
+    Dictionary(
+        reading = "saas", cost = (10000).toShort(), word = "SaaS", withUpperCase = true
+    ),
+    Dictionary(
+        reading = "paas", cost = (10000).toShort(), word = "PaaS", withUpperCase = true
+    ),
+    Dictionary(
+        reading = "iaas", cost = (10000).toShort(), word = "IaaS", withUpperCase = true
+    ),
+    Dictionary(
+        reading = "daas", cost = (10000).toShort(), word = "DaaS", withUpperCase = true
+    ),
+    Dictionary(
+        reading = "xaas", cost = (10000).toShort(), word = "XaaS", withUpperCase = true
+    ),
+    Dictionary(
+        reading = "devops", cost = (10000).toShort(), word = "DevOps", withUpperCase = true
+    ),
+    Dictionary(
+        reading = "javascript", cost = (10000).toShort(), word = "JavaScript", withUpperCase = true
+    ),
+    Dictionary(
+        reading = "typescript", cost = (10000).toShort(), word = "TypeScript", withUpperCase = true
+    ),
+    Dictionary(
+        reading = "igpu", cost = (10000).toShort(), word = "iGPU", withUpperCase = true
+    ),
+    Dictionary(
+        reading = "iot", cost = (10000).toShort(), word = "IoT", withUpperCase = true
+    ),
+    Dictionary(
+        reading = "wheres", cost = (15000).toShort(), word = "where's", withUpperCase = true
     ),
     Dictionary(reading = "dryice", cost = (20000).toShort(), word = "DryIce", withUpperCase = true),
     Dictionary(reading = "cinemascope", cost = (20000).toShort(), word = "CinemaScope", withUpperCase = true),
@@ -212,10 +245,7 @@ val MANUAL_WORD = listOf(
     Dictionary(reading = "mastercraft", cost = (20000).toShort(), word = "MasterCraft", withUpperCase = true),
     Dictionary(reading = "aerovironment", cost = (20000).toShort(), word = "AeroVironment", withUpperCase = true),
     Dictionary(reading = "polygram", cost = (20000).toShort(), word = "PolyGram", withUpperCase = true),
-    Dictionary(reading = "unitedhealthcare", cost = (20000).toShort(), word = "UnitedHealthCare", withUpperCase = true),
     Dictionary(reading = "mastercard", cost = (20000).toShort(), word = "MasterCard", withUpperCase = true),
-    Dictionary(reading = "sportscenter", cost = (20000).toShort(), word = "SportsCenter", withUpperCase = true),
-    Dictionary(reading = "compuserve", cost = (20000).toShort(), word = "CompuServe", withUpperCase = true),
     Dictionary(reading = "wordstar", cost = (20000).toShort(), word = "WordStar", withUpperCase = true),
     Dictionary(reading = "visicalc", cost = (20000).toShort(), word = "VisiCalc", withUpperCase = true),
     Dictionary(reading = "microprose", cost = (20000).toShort(), word = "MicroProse", withUpperCase = true),
@@ -289,4 +319,130 @@ val MANUAL_WORD = listOf(
     Dictionary(reading = "youre", cost = 10000.toShort(), word = "you're", withUpperCase = true),
     Dictionary(reading = "havent", cost = 10000.toShort(), word = "haven't", withUpperCase = true),
     Dictionary(reading = "atcoder", cost = 10000.toShort(), word = "AtCoder", withUpperCase = true),
+)
+
+val TERMINAL_COMMAND = listOf(
+    Dictionary(reading = "pwd", cost = (8000).toShort(), word = "pwd", withUpperCase = false),
+    Dictionary(reading = "ls", cost = (8000).toShort(), word = "ls", withUpperCase = false),
+    Dictionary(reading = "cd", cost = (8000).toShort(), word = "cd", withUpperCase = false),
+    Dictionary(reading = "mkdir", cost = (8000).toShort(), word = "mkdir", withUpperCase = false),
+    Dictionary(reading = "rmdir", cost = (8000).toShort(), word = "rmdir", withUpperCase = false),
+    Dictionary(reading = "touch", cost = (8000).toShort(), word = "touch", withUpperCase = false),
+    Dictionary(reading = "cp", cost = (8000).toShort(), word = "cp", withUpperCase = false),
+    Dictionary(reading = "mv", cost = (8000).toShort(), word = "mv", withUpperCase = false),
+    Dictionary(reading = "rm", cost = (8000).toShort(), word = "rm", withUpperCase = false),
+    Dictionary(reading = "cat", cost = (8000).toShort(), word = "cat", withUpperCase = false),
+    Dictionary(reading = "more", cost = (8000).toShort(), word = "more", withUpperCase = false),
+    Dictionary(reading = "less", cost = (8000).toShort(), word = "less", withUpperCase = false),
+    Dictionary(reading = "head", cost = (8000).toShort(), word = "head", withUpperCase = false),
+    Dictionary(reading = "tail", cost = (8000).toShort(), word = "tail", withUpperCase = false),
+    Dictionary(reading = "grep", cost = (8000).toShort(), word = "grep", withUpperCase = false),
+    Dictionary(reading = "egrep", cost = (8000).toShort(), word = "egrep", withUpperCase = false),
+    Dictionary(reading = "fgrep", cost = (8000).toShort(), word = "fgrep", withUpperCase = false),
+    Dictionary(reading = "find", cost = (8000).toShort(), word = "find", withUpperCase = false),
+    Dictionary(reading = "locate", cost = (8000).toShort(), word = "locate", withUpperCase = false),
+    Dictionary(reading = "which", cost = (8000).toShort(), word = "which", withUpperCase = false),
+    Dictionary(reading = "whereis", cost = (8000).toShort(), word = "whereis", withUpperCase = false),
+    Dictionary(reading = "type", cost = (8000).toShort(), word = "type", withUpperCase = false),
+    Dictionary(reading = "echo", cost = (8000).toShort(), word = "echo", withUpperCase = false),
+    Dictionary(reading = "printf", cost = (8000).toShort(), word = "printf", withUpperCase = false),
+    Dictionary(reading = "env", cost = (8000).toShort(), word = "env", withUpperCase = false),
+    Dictionary(reading = "export", cost = (8000).toShort(), word = "export", withUpperCase = false),
+    Dictionary(reading = "set", cost = (8000).toShort(), word = "set", withUpperCase = false),
+    Dictionary(reading = "unset", cost = (8000).toShort(), word = "unset", withUpperCase = false),
+    Dictionary(reading = "alias", cost = (8000).toShort(), word = "alias", withUpperCase = false),
+    Dictionary(reading = "unalias", cost = (8000).toShort(), word = "unalias", withUpperCase = false),
+    Dictionary(reading = "history", cost = (8000).toShort(), word = "history", withUpperCase = false),
+    Dictionary(reading = "clear", cost = (8000).toShort(), word = "clear", withUpperCase = false),
+    Dictionary(reading = "date", cost = (8000).toShort(), word = "date", withUpperCase = false),
+    Dictionary(reading = "cal", cost = (8000).toShort(), word = "cal", withUpperCase = false),
+    Dictionary(reading = "whoami", cost = (8000).toShort(), word = "whoami", withUpperCase = false),
+    Dictionary(reading = "who", cost = (8000).toShort(), word = "who", withUpperCase = false),
+    Dictionary(reading = "w", cost = (8000).toShort(), word = "w", withUpperCase = false),
+    Dictionary(reading = "id", cost = (8000).toShort(), word = "id", withUpperCase = false),
+    Dictionary(reading = "groups", cost = (8000).toShort(), word = "groups", withUpperCase = false),
+    Dictionary(reading = "ps", cost = (8000).toShort(), word = "ps", withUpperCase = false),
+    Dictionary(reading = "top", cost = (8000).toShort(), word = "top", withUpperCase = false),
+    Dictionary(reading = "kill", cost = (8000).toShort(), word = "kill", withUpperCase = false),
+    Dictionary(reading = "killall", cost = (8000).toShort(), word = "killall", withUpperCase = false),
+    Dictionary(reading = "ping", cost = (8000).toShort(), word = "ping", withUpperCase = false),
+    Dictionary(reading = "traceroute", cost = (8000).toShort(), word = "traceroute", withUpperCase = false),
+    Dictionary(reading = "ifconfig", cost = (8000).toShort(), word = "ifconfig", withUpperCase = false),
+    Dictionary(reading = "ip", cost = (8000).toShort(), word = "ip", withUpperCase = false),
+    Dictionary(reading = "netstat", cost = (8000).toShort(), word = "netstat", withUpperCase = false),
+    Dictionary(reading = "ss", cost = (8000).toShort(), word = "ss", withUpperCase = false),
+    Dictionary(reading = "df", cost = (8000).toShort(), word = "df", withUpperCase = false),
+    Dictionary(reading = "du", cost = (8000).toShort(), word = "du", withUpperCase = false),
+    Dictionary(reading = "mount", cost = (8000).toShort(), word = "mount", withUpperCase = false),
+    Dictionary(reading = "umount", cost = (8000).toShort(), word = "umount", withUpperCase = false),
+    Dictionary(reading = "sudo", cost = (8000).toShort(), word = "sudo", withUpperCase = false),
+    Dictionary(reading = "chmod", cost = (8000).toShort(), word = "chmod", withUpperCase = false),
+    Dictionary(reading = "chown", cost = (8000).toShort(), word = "chown", withUpperCase = false),
+    Dictionary(reading = "chgrp", cost = (8000).toShort(), word = "chgrp", withUpperCase = false),
+    Dictionary(reading = "ln", cost = (8000).toShort(), word = "ln", withUpperCase = false),
+    Dictionary(reading = "man", cost = (8000).toShort(), word = "man", withUpperCase = false),
+    Dictionary(reading = "help", cost = (8000).toShort(), word = "help", withUpperCase = false),
+    Dictionary(reading = "apt", cost = (8000).toShort(), word = "apt", withUpperCase = false),
+    Dictionary(reading = "apt-get", cost = (8000).toShort(), word = "apt-get", withUpperCase = false),
+    Dictionary(reading = "dnf", cost = (8000).toShort(), word = "dnf", withUpperCase = false),
+    Dictionary(reading = "yum", cost = (8000).toShort(), word = "yum", withUpperCase = false),
+    Dictionary(reading = "pacman", cost = (8000).toShort(), word = "pacman", withUpperCase = false),
+    Dictionary(reading = "brew", cost = (8000).toShort(), word = "brew", withUpperCase = false),
+    Dictionary(reading = "dpkg", cost = (8000).toShort(), word = "dpkg", withUpperCase = false),
+    Dictionary(reading = "rpm", cost = (8000).toShort(), word = "rpm", withUpperCase = false),
+    Dictionary(reading = "curl", cost = (8000).toShort(), word = "curl", withUpperCase = false),
+    Dictionary(reading = "wget", cost = (8000).toShort(), word = "wget", withUpperCase = false),
+    Dictionary(reading = "ssh", cost = (8000).toShort(), word = "ssh", withUpperCase = false),
+    Dictionary(reading = "scp", cost = (8000).toShort(), word = "scp", withUpperCase = false),
+    Dictionary(reading = "rsync", cost = (8000).toShort(), word = "rsync", withUpperCase = false),
+    Dictionary(reading = "tar", cost = (8000).toShort(), word = "tar", withUpperCase = false),
+    Dictionary(reading = "gzip", cost = (8000).toShort(), word = "gzip", withUpperCase = false),
+    Dictionary(reading = "gunzip", cost = (8000).toShort(), word = "gunzip", withUpperCase = false),
+    Dictionary(reading = "bzip2", cost = (8000).toShort(), word = "bzip2", withUpperCase = false),
+    Dictionary(reading = "bunzip2", cost = (8000).toShort(), word = "bunzip2", withUpperCase = false),
+    Dictionary(reading = "zip", cost = (8000).toShort(), word = "zip", withUpperCase = false),
+    Dictionary(reading = "unzip", cost = (8000).toShort(), word = "unzip", withUpperCase = false),
+    Dictionary(reading = "ssh-keygen", cost = (8000).toShort(), word = "ssh-keygen", withUpperCase = false),
+    Dictionary(reading = "git", cost = (8000).toShort(), word = "git", withUpperCase = false),
+    Dictionary(reading = "svn", cost = (8000).toShort(), word = "svn", withUpperCase = false),
+    Dictionary(reading = "hg", cost = (8000).toShort(), word = "hg", withUpperCase = false),
+    Dictionary(reading = "docker", cost = (8000).toShort(), word = "docker", withUpperCase = false),
+    Dictionary(reading = "kubectl", cost = (8000).toShort(), word = "kubectl", withUpperCase = false),
+    Dictionary(reading = "make", cost = (8000).toShort(), word = "make", withUpperCase = false),
+    Dictionary(reading = "gcc", cost = (8000).toShort(), word = "gcc", withUpperCase = false),
+    Dictionary(reading = "g++", cost = (8000).toShort(), word = "g++", withUpperCase = false),
+    Dictionary(reading = "java", cost = (8000).toShort(), word = "java", withUpperCase = false),
+    Dictionary(reading = "javac", cost = (8000).toShort(), word = "javac", withUpperCase = false),
+    Dictionary(reading = "python", cost = (8000).toShort(), word = "python", withUpperCase = false),
+    Dictionary(reading = "perl", cost = (8000).toShort(), word = "perl", withUpperCase = false),
+    Dictionary(reading = "ruby", cost = (8000).toShort(), word = "ruby", withUpperCase = false),
+    Dictionary(reading = "node", cost = (8000).toShort(), word = "node", withUpperCase = false),
+    Dictionary(reading = "npm", cost = (8000).toShort(), word = "npm", withUpperCase = false),
+    Dictionary(reading = "yarn", cost = (8000).toShort(), word = "yarn", withUpperCase = false),
+    Dictionary(reading = "go", cost = (8000).toShort(), word = "go", withUpperCase = false),
+    Dictionary(reading = "rustc", cost = (8000).toShort(), word = "rustc", withUpperCase = false),
+    Dictionary(reading = "cargo", cost = (8000).toShort(), word = "cargo", withUpperCase = false),
+    Dictionary(reading = "mvn", cost = (8000).toShort(), word = "mvn", withUpperCase = false),
+    Dictionary(reading = "gradle", cost = (8000).toShort(), word = "gradle", withUpperCase = false),
+    Dictionary(reading = "ant", cost = (8000).toShort(), word = "ant", withUpperCase = false),
+    Dictionary(reading = "openssl", cost = (8000).toShort(), word = "openssl", withUpperCase = false),
+    Dictionary(reading = "passwd", cost = (8000).toShort(), word = "passwd", withUpperCase = false),
+    Dictionary(reading = "useradd", cost = (8000).toShort(), word = "useradd", withUpperCase = false),
+    Dictionary(reading = "userdel", cost = (8000).toShort(), word = "userdel", withUpperCase = false),
+    Dictionary(reading = "groupadd", cost = (8000).toShort(), word = "groupadd", withUpperCase = false),
+    Dictionary(reading = "groupdel", cost = (8000).toShort(), word = "groupdel", withUpperCase = false),
+    Dictionary(reading = "hostname", cost = (8000).toShort(), word = "hostname", withUpperCase = false),
+    Dictionary(reading = "uptime", cost = (8000).toShort(), word = "uptime", withUpperCase = false),
+    Dictionary(reading = "reboot", cost = (8000).toShort(), word = "reboot", withUpperCase = false),
+    Dictionary(reading = "shutdown", cost = (8000).toShort(), word = "shutdown", withUpperCase = false),
+    Dictionary(reading = "service", cost = (8000).toShort(), word = "service", withUpperCase = false),
+    Dictionary(reading = "systemctl", cost = (8000).toShort(), word = "systemctl", withUpperCase = false),
+    Dictionary(reading = "journalctl", cost = (8000).toShort(), word = "journalctl", withUpperCase = false),
+    Dictionary(reading = "dmesg", cost = (8000).toShort(), word = "dmesg", withUpperCase = false),
+    Dictionary(reading = "cron", cost = (8000).toShort(), word = "cron", withUpperCase = false),
+    Dictionary(reading = "crontab", cost = (8000).toShort(), word = "crontab", withUpperCase = false),
+    Dictionary(reading = "at", cost = (8000).toShort(), word = "at", withUpperCase = false),
+    Dictionary(reading = "su", cost = (8000).toShort(), word = "su", withUpperCase = false),
+    Dictionary(reading = "login", cost = (8000).toShort(), word = "login", withUpperCase = false),
+    Dictionary(reading = "logout", cost = (8000).toShort(), word = "logout", withUpperCase = false)
 )
