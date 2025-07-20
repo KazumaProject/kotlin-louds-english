@@ -406,7 +406,7 @@ val TERMINAL_COMMAND = listOf(
     Dictionary(reading = "git", cost = (8000).toShort(), word = "git", withUpperCase = false),
     Dictionary(reading = "svn", cost = (8000).toShort(), word = "svn", withUpperCase = false),
     Dictionary(reading = "hg", cost = (8000).toShort(), word = "hg", withUpperCase = false),
-    Dictionary(reading = "docker", cost = (8000).toShort(), word = "docker", withUpperCase = false),
+    Dictionary(reading = "docker", cost = (22000).toShort(), word = "docker", withUpperCase = false),
     Dictionary(reading = "kubectl", cost = (8000).toShort(), word = "kubectl", withUpperCase = false),
     Dictionary(reading = "make", cost = (8000).toShort(), word = "make", withUpperCase = false),
     Dictionary(reading = "gcc", cost = (8000).toShort(), word = "gcc", withUpperCase = false),
@@ -548,12 +548,12 @@ val DEVOPS_COMMAND = listOf(
 )
 
 val UTIL_COMMAND = listOf(
-    Dictionary(reading = "exa",     cost = 8000.toShort(), word = "exa",     withUpperCase = false),
-    Dictionary(reading = "bat",     cost = 8000.toShort(), word = "bat",     withUpperCase = false),
+    Dictionary(reading = "exa", cost = 8000.toShort(), word = "exa", withUpperCase = false),
+    Dictionary(reading = "bat", cost = 8000.toShort(), word = "bat", withUpperCase = false),
     Dictionary(reading = "ripgrep", cost = 8000.toShort(), word = "ripgrep", withUpperCase = false),
-    Dictionary(reading = "fd",      cost = 8000.toShort(), word = "fd",      withUpperCase = false),
-    Dictionary(reading = "fzf",     cost = 8000.toShort(), word = "fzf",     withUpperCase = false),
-    Dictionary(reading = "jq",      cost = 8000.toShort(), word = "jq",      withUpperCase = false),
-    Dictionary(reading = "htop",    cost = 8000.toShort(), word = "htop",    withUpperCase = false),
-    Dictionary(reading = "docker-compose", cost = 8000.toShort(), word = "docker-compose", withUpperCase = false),
+    Dictionary(reading = "fd", cost = 8000.toShort(), word = "fd", withUpperCase = false),
+    Dictionary(reading = "fzf", cost = 8000.toShort(), word = "fzf", withUpperCase = false),
+    Dictionary(reading = "jq", cost = 8000.toShort(), word = "jq", withUpperCase = false),
+    Dictionary(reading = "htop", cost = 8000.toShort(), word = "htop", withUpperCase = false),
+    Dictionary(reading = "docker-compose", cost = 25000.toShort(), word = "docker-compose", withUpperCase = false),
 )
