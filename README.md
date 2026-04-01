@@ -52,6 +52,22 @@ val predictions = getPrediction("こう")
 predictions.take(5).forEach { println(it) }
 ```
 
+## 🌐 GitHub Pages Demo (Static)
+
+This repository also supports a static autocomplete demo for GitHub Pages.
+
+```bash
+# Generate docs/suggestions.json for the static page
+$ ./gradlew generatePagesData --no-daemon
+```
+
+Then publish using the included workflow:
+
+* `.github/workflows/deploy_pages_demo.yml`
+* Source directory: `docs/`
+
+After deployment, open your Pages URL and use the autocomplete UI in `docs/index.html`.
+
 ## ⚙️ CI Pipeline
 
 | Step | Action                           | Purpose                               |
@@ -149,6 +165,22 @@ $ ./gradlew run --no-daemon
 val results = getPrediction("こう")
 results.take(5).forEach { println(it) }
 ```
+
+## 🌐 GitHub Pages デモ (静的版)
+
+このリポジトリは GitHub Pages 向けの静的オートコンプリートデモにも対応しています。
+
+```bash
+# 静的ページ用の辞書データを生成
+$ ./gradlew generatePagesData --no-daemon
+```
+
+デプロイは同梱 workflow を使います。
+
+* `.github/workflows/deploy_pages_demo.yml`
+* 配信ディレクトリ: `docs/`
+
+デプロイ後は Pages の URL で `docs/index.html` のデモを利用できます。
 
 ## ⚙️ CI パイプライン
 
