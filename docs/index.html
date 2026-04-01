@@ -249,8 +249,7 @@
 
     function searchByPrefix(query, limit) {
       const idx = lowerBound(entries, query);
-      const result = [];
-      const seen = new Set();
+      const bestByWord = new Map();
 
       for (let i = idx; i < entries.length; i += 1) {
         const row = entries[i];
@@ -259,23 +258,29 @@
         }
 
         const wordKey = row[1].toLowerCase();
-        if (seen.has(wordKey)) {
-          continue;
-        }
-
-        seen.add(wordKey);
-        result.push({
+        const candidate = {
           reading: row[0],
           word: row[1],
           score: row[2]
-        });
+        };
 
-        if (result.length >= limit) {
-          break;
+        const existing = bestByWord.get(wordKey);
+        if (!existing || candidate.score < existing.score) {
+          bestByWord.set(wordKey, candidate);
         }
       }
 
-      return result;
+      return Array.from(bestByWord.values())
+        .sort((a, b) => {
+          if (a.score !== b.score) {
+            return a.score - b.score;
+          }
+          if (a.word !== b.word) {
+            return a.word.localeCompare(b.word);
+          }
+          return a.reading.localeCompare(b.reading);
+        })
+        .slice(0, limit);
     }
 
     function renderItems(items) {
