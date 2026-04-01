@@ -1,0 +1,351 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>LOUDS English Autocomplete Demo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --ink: #10231f;
+      --muted: #4d635f;
+      --accent: #087f6a;
+      --accent-2: #e85d04;
+      --sheet: rgba(252, 250, 245, 0.9);
+      --line: #d8ddd6;
+      --shadow: 0 18px 60px rgba(16, 35, 31, 0.12);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      margin: 0;
+      min-height: 100%;
+    }
+
+    body {
+      font-family: "Space Grotesk", "Avenir Next", sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(1200px 800px at -10% 10%, rgba(8, 127, 106, 0.16), transparent 60%),
+        radial-gradient(1000px 600px at 120% 90%, rgba(232, 93, 4, 0.16), transparent 55%),
+        linear-gradient(140deg, #f4efe4 0%, #eaf6f2 45%, #fdf7f1 100%);
+      display: grid;
+      place-items: center;
+      padding: 24px;
+    }
+
+    .panel {
+      width: min(920px, 100%);
+      background: var(--sheet);
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(10px);
+      overflow: hidden;
+      animation: rise 520ms ease-out both;
+    }
+
+    .hero {
+      padding: 28px 28px 18px;
+      border-bottom: 1px solid var(--line);
+      background:
+        linear-gradient(120deg, rgba(8, 127, 106, 0.09), transparent 55%),
+        linear-gradient(300deg, rgba(232, 93, 4, 0.08), transparent 60%);
+    }
+
+    .kicker {
+      margin: 0;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    h1 {
+      margin: 8px 0 0;
+      font-size: clamp(26px, 4.2vw, 40px);
+      line-height: 1.05;
+      letter-spacing: -0.025em;
+    }
+
+    .body {
+      padding: 22px 28px 28px;
+    }
+
+    .search {
+      display: grid;
+      gap: 10px;
+      margin-bottom: 16px;
+    }
+
+    label {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--muted);
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    input {
+      width: 100%;
+      border: 2px solid var(--line);
+      background: #ffffff;
+      color: var(--ink);
+      border-radius: 16px;
+      padding: 14px;
+      font-size: 20px;
+      font-family: "IBM Plex Mono", monospace;
+      transition: border-color 120ms ease, transform 120ms ease;
+    }
+
+    input:focus {
+      outline: none;
+      border-color: var(--accent);
+      transform: translateY(-1px);
+    }
+
+    .meta {
+      min-height: 24px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: grid;
+      gap: 8px;
+    }
+
+    .item {
+      border: 1px solid var(--line);
+      background: #fff;
+      border-radius: 12px;
+      padding: 12px 14px;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: center;
+      gap: 10px;
+      animation: reveal 300ms ease both;
+    }
+
+    .word {
+      font-size: 20px;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+    }
+
+    .reading {
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 12px;
+      color: var(--muted);
+      margin-top: 2px;
+    }
+
+    .score {
+      font-family: "IBM Plex Mono", monospace;
+      color: var(--accent-2);
+      font-weight: 600;
+      font-size: 13px;
+      white-space: nowrap;
+    }
+
+    .empty {
+      border: 1px dashed var(--line);
+      border-radius: 12px;
+      padding: 14px;
+      color: var(--muted);
+      background: rgba(255, 255, 255, 0.72);
+    }
+
+    @keyframes rise {
+      from {
+        opacity: 0;
+        transform: translateY(18px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes reveal {
+      from {
+        opacity: 0;
+        transform: translateX(-8px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    @media (max-width: 640px) {
+      .hero,
+      .body {
+        padding: 18px;
+      }
+
+      input {
+        font-size: 18px;
+      }
+
+      .word {
+        font-size: 17px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="panel">
+    <section class="hero">
+      <p class="kicker">GitHub Pages Demo</p>
+      <h1>LOUDS English Autocomplete</h1>
+    </section>
+    <section class="body">
+      <div class="search">
+        <label for="query">Type a prefix</label>
+        <input id="query" type="text" autocomplete="off" spellcheck="false" placeholder="try: the, im, ios, node" />
+      </div>
+      <div id="meta" class="meta">Loading dictionary data...</div>
+      <ul id="list" class="list"></ul>
+    </section>
+  </main>
+
+  <script>
+    const input = document.getElementById('query');
+    const list = document.getElementById('list');
+    const meta = document.getElementById('meta');
+    const LIMIT = 10;
+
+    let entries = [];
+    let timer;
+
+    function setMeta(text) {
+      meta.textContent = text;
+    }
+
+    function lowerBound(arr, query) {
+      let left = 0;
+      let right = arr.length;
+      while (left < right) {
+        const mid = (left + right) >> 1;
+        if (arr[mid][0] < query) {
+          left = mid + 1;
+        } else {
+          right = mid;
+        }
+      }
+      return left;
+    }
+
+    function searchByPrefix(query, limit) {
+      const idx = lowerBound(entries, query);
+      const result = [];
+      const seen = new Set();
+
+      for (let i = idx; i < entries.length; i += 1) {
+        const row = entries[i];
+        if (!row[0].startsWith(query)) {
+          break;
+        }
+
+        const wordKey = row[1].toLowerCase();
+        if (seen.has(wordKey)) {
+          continue;
+        }
+
+        seen.add(wordKey);
+        result.push({
+          reading: row[0],
+          word: row[1],
+          score: row[2]
+        });
+
+        if (result.length >= limit) {
+          break;
+        }
+      }
+
+      return result;
+    }
+
+    function renderItems(items) {
+      list.innerHTML = '';
+
+      if (!items.length) {
+        const empty = document.createElement('div');
+        empty.className = 'empty';
+        empty.textContent = 'No suggestions.';
+        list.appendChild(empty);
+        return;
+      }
+
+      for (const item of items) {
+        const li = document.createElement('li');
+        li.className = 'item';
+
+        const left = document.createElement('div');
+        const word = document.createElement('div');
+        word.className = 'word';
+        word.textContent = item.word;
+
+        const reading = document.createElement('div');
+        reading.className = 'reading';
+        reading.textContent = `reading: ${item.reading}`;
+
+        left.appendChild(word);
+        left.appendChild(reading);
+
+        const score = document.createElement('div');
+        score.className = 'score';
+        score.textContent = `score ${item.score}`;
+
+        li.appendChild(left);
+        li.appendChild(score);
+        list.appendChild(li);
+      }
+    }
+
+    async function loadData() {
+      const response = await fetch('./suggestions.json');
+      if (!response.ok) {
+        throw new Error(`Failed to load suggestions.json: ${response.status}`);
+      }
+      const json = await response.json();
+      entries = Array.isArray(json.items) ? json.items : [];
+      setMeta(`Dictionary loaded: ${entries.length.toLocaleString()} entries`);
+    }
+
+    input.addEventListener('input', () => {
+      const query = input.value.trim().toLowerCase();
+      clearTimeout(timer);
+
+      if (!query) {
+        list.innerHTML = '';
+        setMeta(`Dictionary loaded: ${entries.length.toLocaleString()} entries`);
+        return;
+      }
+
+      timer = setTimeout(() => {
+        const items = searchByPrefix(query, LIMIT);
+        renderItems(items);
+        setMeta(`${items.length} suggestion(s) for "${query}"`);
+      }, 80);
+    });
+
+    loadData().catch((error) => {
+      console.error(error);
+      setMeta('Failed to load dictionary data. Run the generation task first.');
+    });
+  </script>
+</body>
+</html>
