@@ -3,6 +3,7 @@ import converters.ConverterWithTermId
 import dictionary.BuildDictionary
 import dictionary.Dictionary
 import engine.EnglishEngine
+import glide.QwertyGlideIndexGenerator
 import louds.LOUDS
 import louds.louds_with_term_id.LOUDSWithTermId
 import prefix.PrefixTree
@@ -37,6 +38,11 @@ fun main() {
         )
     println("読み込んだエントリ数: ${dictList.size}")
     buildDictionaries(dictList)
+    val qwertyGlideEntryCount = QwertyGlideIndexGenerator.generate(
+        dictList = dictList,
+        outputFile = File("./src/main/resources/qwerty_glide_index.dat")
+    )
+    println("qwerty_glide_index.dat entries: $qwertyGlideEntryCount")
     val englishEngine = EnglishEngine(
         readingLOUDS = readingLOUDS,
         wordLOUDS = wordLOUDS,
