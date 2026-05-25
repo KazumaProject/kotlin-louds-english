@@ -44,3 +44,4 @@ bin/
 /src/main/resources/reading.dat
 /src/main/resources/token.dat
 /src/main/resources/word.dat
+/src/main/resources/qwerty_glide_index.dat
